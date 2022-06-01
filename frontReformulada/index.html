@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jogos</title>
+    <link rel="stylesheet" href="./public/style.css" />
+  </head>
+  <body>
+    <div class="Home">
+      <header class="Header">
+        <div class="Header__container">
+          <div>
+            <img src="public/imgs/logo.jpg" width="70px" alt="Logo" class="Logo__icone" />
+            <h2>Jogos</h2>
+          </div>
+          <img src="public/imgs/sacola.png" width="40px" class="Sacola__icone" alt="Sacola de compras" />
+        </div>
+      </header>
+
+      <div class="NovoJogo__container">
+        <button
+          onclick="mostrarModalCriacao()"
+          class="botao-padrao botao-cadastro"
+        >
+          Cadastrar Novo Jogo
+        </button>
+      </div>
+
+      <h2>Pesquisar Jogo</h2>
+      <div class="PesquisarJogo">
+        <div class="PesquisarJogo__container">
+          <input
+            id="inputBuscaJogo"
+            placeholder="Digite o Jogo e clique em escolher"
+          />
+          <button class="botao-padrao" onclick="imprimirUmJogoPorId()">
+            Escolher
+          </button>
+          <div class="JogoPesquisado" id="JogoPesquisado"></div>
+        </div>
+      </div>
+
+      <h2>Jogos Disponíveis:</h2>
+      <div class="Home__container">
+        <div class="JogoLista" id="JogoList"></div>
+      </div>
+
+      <div class="fundo-modal" id="fundoModalCriacao">
+        <div class="modal">
+          <div class="cabecalho-modal">
+            <h2>Cadastrar um Jogo</h2>
+            <span onclick="esconderModalCriacao()">X</span>
+          </div>
+          <div class="corpo-modal">
+            <input
+              class="input-jogo"
+              placeholder="nome do Jogo"  
+              id="inputJogo"
+            />
+            <input
+              type="number"
+              class="input-preco"
+              id="inputPreco"
+              placeholder="Preço do Jogo"
+            />
+            <textarea
+              class="input-sinopse"
+              placeholder="Sinopse do Jogo"
+              id="inputDescricao"
+              rows="4"
+            ></textarea>
+            <input
+              class="input-foto"
+              placeholder="Link da foto do jogo"
+              id="inputFoto"
+            />
+            <button class="botao-modal" onclick="cadastrarNovoJogo()">
+              Cadastrar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="fundo-modal" id="fundoModalExclusao">
+        <div class="modal">
+          <div class="cabecalho-modal">
+            <h2>Confirmação</h2>
+            <span onclick="esconderModalExclusao()">X</span>
+          </div>
+          <div class="corpo-modal corpo-modal-exclusao">
+            <h2>Deseja realmente apagar esse jogo</h2>
+            <div>
+              <button
+                class="botao-cancelar-excluir-jogo"
+                onclick="esconderModalExclusao()"
+              >
+                Não
+              </button>
+              <button
+                class="botao-confirmar-excluir-jogo"
+                id="botaoConfirmarExclusao"
+              >
+                Sim
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="fundo-modal" id="fundoModalEdicao">
+        <div class="modal">
+          <div class="cabecalho-modal">
+            <h2>Atualizar um jogo</h2>
+            <span onclick="esconderModalEdicao()">X</span>
+          </div>
+          <div class="corpo-modal">
+            <input
+              class="input-jogo"
+              placeholder="Nome do Jogo"
+              id="inputJogoEdicao"
+            />
+            <input
+              type="number"
+              class="input-preco"
+              id="inputPrecoEdicao"
+              placeholder="Preço do Jogo"
+            />
+            <textarea
+              class="input-sinopse"
+              placeholder="sinopse do jogo"
+              id="inputDescricaoEdicao"
+              rows="4"
+            ></textarea>
+            <input
+              class="input-foto"
+              placeholder="Link da foto do Jogo"
+              id="inputFotoEdicao"
+            />
+            <button class="botao-modal" id="botaoConfirmarEdicao">
+              Atualizar
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <div class="notificacao" id="notificacao">
+        <span id="notificacaoSpan"></span>
+        <p id="notificacaoP"></p>
+      </div>
+    </div>
+    <script src="./public/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,432 @@
+@import url("https://fonts.googleapis.com/css?family=Exo:400,700");
+
+:root {
+  --primary-color: #1e361f94;
+  --second-color: hsla(203, 17%, 9%, 0.425);
+  --third-color: rgb(8, 56, 14);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Exo", sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  min-height: 100vh;
+  overflow: auto;
+  background-color: rgb(255, 255, 255);
+}
+
+.Logo__icone {
+background-color: var(--primary-color);
+margin: 0.4rem;
+border-radius: 2rem;
+position: absolute;
+left: -20px;
+top: 5px;
+}
+
+.Sacola__icone
+{
+  display: flex;
+  width: auto;
+  height: 2rem;
+  align-items: flex-end;
+  margin-right: -250px;
+}
+
+.Home {
+  position: relative;
+  background-image: radial-gradient(
+    farthest-corner at 40px 40px,
+    #1f2925 60%,
+    rgba(0, 0, 0, 0.774) 100%
+  );
+  min-height: calc(100vh - 60px);
+  margin: 15px;
+  padding: 15px;
+  border-radius: 20px;
+  color: rgb(250, 239, 239);
+  box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+}
+
+.Home > h2 {
+  display: flex;
+  justify-content: space-around;
+  color: rgb(250, 250, 250);
+  margin-top: 2rem;
+}
+
+.Home > .PesquisarJogo {
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+}
+
+.Home > .Home__container {
+  display: flex;
+  justify-content: center;
+  color: rgb(0, 0, 0);
+}
+
+.Home__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@media (max-width: 350px) {
+  .Home__container {
+    justify-content: unset;
+  }
+}
+
+.JogoLista {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 25px 50px;
+}
+
+@media (max-width: 1220px) {
+  .JogoLista {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 840px) {
+  .JogoLista {
+    grid-template-columns: 1fr;
+  }
+}
+
+.CartaoJogo {
+  font-family: "Exo";
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 10px;
+  padding: 10px;
+  width: 315px;
+  display: flex;
+  justify-content: space-around;
+  margin: 20px 0;
+  height: 150px;
+  animation: aparecer 2s normal;
+}
+
+@media (max-width: 400px) {
+  .CartaoJogo,
+  .CartaoJogo__infos {
+    width: 210px;
+    height: 180px;
+  }
+}
+
+.CartaoJogo__infos {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.CartaoJogo__infos > h4 {
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 100%;
+}
+
+.CartaoJogo__infos > p {
+  font-size: 0.85em;
+}
+
+.CartaoJogo__infos > span {
+  color: rgb(0, 0, 0);
+}
+
+.CartaoJogo__infos > div > button {
+  background-color: transparent;
+  padding: 0.6rem 2.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.botao-excluir-jogo {
+  border: 1px solid red;
+  color: red;
+}
+
+.botao-excluir-jogo:hover {
+  background-color: red;
+  color: #ffffff;
+}
+
+.botao-editar-jogo {
+  border: 1px solid blue;
+  color: blue;
+}
+
+.botao-editar-jogo:hover {
+  background-color: blue;
+  color: #ffffff;
+}
+
+.CartaoJogo > img {
+  height: 150px;
+  margin-right: -60px;
+}
+
+.Header {
+  width: calc(60vw - 60px);
+  height: 12vh;
+  align-items: center;
+  padding: 0 20vw;
+}
+
+.Header > .Header__container {
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.Header > .Header__container > div {
+  display: flex;
+  align-items: center;
+  font-size: x-large;
+  background-color: #ffffff4d;
+  width: 16vw;
+  height: 7vh;
+  border-radius: 10px;
+  position: relative;
+}
+
+.Header > .Header__container > div > img {
+  position: absolute;
+  left: -25px;
+  top: -10px;
+}
+
+.Header > .Header__container > div > h2 {
+  position: absolute;
+  left: 50px;
+}
+
+.MensagemDeErro {
+  color: red;
+  margin: 2rem;
+  font-size: larger;
+}
+
+.PesquisarJogo {
+  width: calc(20vw - 60px);
+  padding: 0 40vw;
+}
+
+.PesquisarJogo > .PesquisarJogo__container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.PesquisarJogo > .PesquisarJogo__container > input {
+  border: none;
+  margin: 1rem 0;
+  padding: 8px 6px;
+  border-radius: 3px;
+}
+
+.botao-padrao {
+  background-color: transparent;
+  border-radius: 3px;
+  border: 2px solid #050505;
+  color: #000000;
+  font-size: larger;
+  font-weight: 700;
+  height: 33px;
+  cursor: pointer;
+}
+
+.botao-cadastro {
+  padding: 0.1rem 5rem;
+  font-size: medium;
+}
+
+.botao-padrao:hover {
+  color: #50c5ee;
+  background-color: #000000;
+}
+
+.NovoJogo__container {
+  width: 100%;
+  height: 5vh;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.fundo-modal {
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #0000004d;
+  align-items: center;
+  justify-content: center;
+}
+
+.fundo-modal > .modal {
+  width: 30vw;
+  height: 36vh;
+  background-color: white;
+  border-radius: 20px;
+}
+
+.fundo-modal > .modal > .cabecalho-modal {
+  width: calc(100% - 40px);
+  height: 7vh;
+  background-color: #1f2925;
+  border-radius: 20px 20px 0 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  user-select: none;
+}
+
+.fundo-modal > .modal > .cabecalho-modal > span {
+  cursor: pointer;
+}
+
+.fundo-modal > .modal > .corpo-modal {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 14px);
+  padding: 0 7px;
+  align-items: center;
+}
+
+.fundo-modal > .modal > .corpo-modal > input,
+textarea {
+  width: calc(100% - 14px);
+  border: 1px solid #0000002d;
+  border-radius: 5px;
+  padding: 7px;
+  margin-top: 7px;
+}
+
+.fundo-modal > .modal > .corpo-modal > button {
+  width: 9vw;
+  height: 4vh;
+  margin-top: 7px;
+  border: 1px solid #1f2925;
+  color: #1f2925;
+  background-color: transparent;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.fundo-modal > .modal > .corpo-modal > button:hover {
+  color: white;
+  background-color: #1f2925;
+}
+
+.corpo-modal-exclusao {
+  margin-top: 2rem;
+}
+
+.corpo-modal-exclusao > h2 {
+  margin-bottom: 3rem;
+  font-weight: 300;
+}
+
+.corpo-modal-exclusao > div {
+  width: calc(100% - 14px);
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.corpo-modal-exclusao > div > button {
+  background-color: transparent;
+  padding: 0.6rem 5rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: large;
+}
+
+.botao-cancelar-excluir-jogo {
+  border: 1px solid red;
+  color: red;
+}
+
+.botao-cancelar-excluir-jogo:hover {
+  background-color: red;
+  color: white;
+}
+
+.botao-confirmar-excluir-jogo {
+  border: 1px solid #00b309;
+  color: #00b309;
+}
+
+.botao-confirmar-excluir-jogo:hover {
+  background-color: #00b309;
+  color: white;
+}
+
+@keyframes aparecer {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.notificacao {
+  display: none;
+  min-width: 10vw;
+  max-width: 22vw;
+  height: 4vh;
+  border: 1px solid #0000003d;
+  justify-content: space-evenly;
+  background-color: white;
+  border-radius: 10px;
+  align-items: center;
+  position: fixed;
+  bottom: 15px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  white-space: nowrap;
+  padding: 0 1rem;
+  animation: aparecer 1s normal;
+  animation: subir 6s normal;
+}
+
+.notificacao > span {
+  margin-right: 5px;
+  font-weight: 600;
+}
+
+.notificacao-span-erro {
+  color: red;
+}
+
+.notificacao-span-sucesso {
+  color: green;
+}
+
+@keyframes subir {
+  0% {
+    bottom: -300px;
+  }
+  20% {
+    bottom: 15px;
+  }
+  60% {
+    bottom: 15px;
+  }
+  100% {
+    bottom: -300px;
+  }
+}
